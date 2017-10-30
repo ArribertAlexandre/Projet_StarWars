@@ -40,6 +40,14 @@
 			</div>
 		</div>
 
+		<div class="col 4">
+			<img src="r2d2.jpg" class="img-fluid col 4" alt="Responsive image">
+			<div class="card-body">
+				<h4 class="card-title r2d2">Card title</h4>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modalR2D2">Plus d'infos</button>
+			</div>
+		</div>
+
 	</div>
 
 
@@ -82,16 +90,17 @@
 								<th scope="col">Film 3</th>
 								<th scope="col">Film 4</th>
 								<th scope="col">Film 5</th>
+								<th scope="col">Film 6</th>
 							</tr>
 						</tbody>
 						<tbody>
 							<tr>
 
-								<td class="result4"></td>
-								<td class="result5"></td>
-								<td class="result6"></td>
-								<td class="result7"></td>
-								<td class="result8"></td>
+								<td class=FILM1></td>
+								<td class="FILM2"></td>
+								<td class="FILM3"></td>
+								<td class="FILM6"></td>
+								<td class="FILM7"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -128,7 +137,7 @@
 							<tr>
 
 								<td class="resultC3PO"></td>
-								<td class="resultTEST"></td>
+								<td class="resultTATOOINE"></td>
 							</tr>
 						</tbody>
 						<tbody>
@@ -139,16 +148,79 @@
 								<th scope="col">Film 3</th>
 								<th scope="col">Film 4</th>
 								<th scope="col">Film 5</th>
+								<th scope="col">Film 6</th>
 							</tr>
 						</tbody>
 						<tbody>
 							<tr>
 
-								<td class="result4"></td>
-								<td class="result5"></td>
-								<td class="result6"></td>
-								<td class="result7"></td>
-								<td class="result8"></td>
+								<td class=FILM1></td>
+								<td class="FILM2"></td>
+								<td class="FILM3"></td>
+								<td class="FILM4"></td>
+								<td class="FILM5"></td>
+								<td class="FILM6"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal R2D2 -->
+	<div class="modal fade bd-example-modal-lg modalR2D2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Plus d'infos</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+				</div>
+				<div class="modal-body">
+
+
+					<table class="table">
+						<thead>
+							<tr>
+
+								<th scope="col">Details</th>
+								<th scope="col">Planète</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+
+								<td class="resultR2D2"></td>
+								<td class="resultNABOO"></td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+
+								<th scope="col">Film 1</th>
+								<th scope="col">Film 2</th>
+								<th scope="col">Film 3</th>
+								<th scope="col">Film 4</th>
+								<th scope="col">Film 5</th>
+								<th scope="col">Film 6</th>
+								<th scope="col">Film 7</th>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+
+								<td class=FILM1></td>
+								<td class="FILM2"></td>
+								<td class="FILM3"></td>
+								<td class="FILM4"></td>
+								<td class="FILM5"></td>
+								<td class="FILM6"></td>
+								<td class="FILM7"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -188,6 +260,14 @@
 
 			});
 		})
+
+		$(document).ready(function() {
+
+			$.get("https://swapi.co/api/people/3/?format=json", function(data) {
+				$(".r2d2").html(data.name);
+
+			});
+		})
 	</script>
 
 
@@ -221,35 +301,8 @@
 		$(document).ready(function() {
 
 
-			$.get("https://swapi.co/api/films/7/", function(data) {
-				var i = ".result8";
-				$(i).append($("<li>").text(data.title));
-				$(i).append($("<li>").text(data.episode_id));
-				$(i).append($("<li>").text(data.director));
-				$(i).append($("<li>").text(data.producer));
-				$(i).append($("<li>").text(data.release_date));
-			})
-
 			$.get("https://swapi.co/api/films/1/", function(data) {
-				var i = ".result7";
-				$(i).append($("<li>").text(data.title));
-				$(i).append($("<li>").text(data.episode_id));
-				$(i).append($("<li>").text(data.director));
-				$(i).append($("<li>").text(data.producer));
-				$(i).append($("<li>").text(data.release_date));
-			})
-
-			$.get("https://swapi.co/api/films/3/", function(data) {
-				var i = ".result6";
-				$(i).append($("<li>").text(data.title));
-				$(i).append($("<li>").text(data.episode_id));
-				$(i).append($("<li>").text(data.director));
-				$(i).append($("<li>").text(data.producer));
-				$(i).append($("<li>").text(data.release_date));
-			})
-
-			$.get("https://swapi.co/api/films/6/", function(data) {
-				var i = ".result5";
+				var i = ".FILM1";
 				$(i).append($("<li>").text(data.title));
 				$(i).append($("<li>").text(data.episode_id));
 				$(i).append($("<li>").text(data.director));
@@ -258,7 +311,50 @@
 			})
 
 			$.get("https://swapi.co/api/films/2/", function(data) {
-				var i = ".result4";
+				var i = ".FILM2";
+				$(i).append($("<li>").text(data.title));
+				$(i).append($("<li>").text(data.episode_id));
+				$(i).append($("<li>").text(data.director));
+				$(i).append($("<li>").text(data.producer));
+				$(i).append($("<li>").text(data.release_date));
+			})
+
+			$.get("https://swapi.co/api/films/3/", function(data) {
+				var i = ".FILM3";
+				$(i).append($("<li>").text(data.title));
+				$(i).append($("<li>").text(data.episode_id));
+				$(i).append($("<li>").text(data.director));
+				$(i).append($("<li>").text(data.producer));
+				$(i).append($("<li>").text(data.release_date));
+			})
+
+			$.get("https://swapi.co/api/films/4/", function(data) {
+				var i = ".FILM4";
+				$(i).append($("<li>").text(data.title));
+				$(i).append($("<li>").text(data.episode_id));
+				$(i).append($("<li>").text(data.director));
+				$(i).append($("<li>").text(data.producer));
+				$(i).append($("<li>").text(data.release_date));
+			})
+
+			$.get("https://swapi.co/api/films/5/", function(data) {
+				var i = ".FILM5";
+				$(i).append($("<li>").text(data.title));
+				$(i).append($("<li>").text(data.episode_id));
+				$(i).append($("<li>").text(data.director));
+				$(i).append($("<li>").text(data.producer));
+				$(i).append($("<li>").text(data.release_date));
+			})
+			$.get("https://swapi.co/api/films/6/", function(data) {
+				var i = ".FILM6";
+				$(i).append($("<li>").text(data.title));
+				$(i).append($("<li>").text(data.episode_id));
+				$(i).append($("<li>").text(data.director));
+				$(i).append($("<li>").text(data.producer));
+				$(i).append($("<li>").text(data.release_date));
+			})
+			$.get("https://swapi.co/api/films/7/", function(data) {
+				var i = ".FILM7";
 				$(i).append($("<li>").text(data.title));
 				$(i).append($("<li>").text(data.episode_id));
 				$(i).append($("<li>").text(data.director));
@@ -283,7 +379,20 @@
 
 
 			$.get("https://swapi.co/api/planets/2/", function(data) {
-				var i = ".resultTEST";
+				var i = ".resultTest";
+				$(i).append($("<li>").text(data.name));
+				$(i).append($("<li>").text(data.rotation_period));
+				$(i).append($("<li>").text(data.orbital_period));
+				$(i).append($("<li>").text(data.diameter));
+				$(i).append($("<li>").text(data.climate));
+				$(i).append($("<li>").text(data.gravity));
+				$(i).append($("<li>").text(data.terrain));
+				$(i).append($("<li>").text(data.surface_water));
+				$(i).append($("<li>").text(data.population));
+
+			})
+			$.get("https://swapi.co/api/planets/8/", function(data) {
+				var i = ".resultNABOO";
 				$(i).append($("<li>").text(data.name));
 				$(i).append($("<li>").text(data.rotation_period));
 				$(i).append($("<li>").text(data.orbital_period));
