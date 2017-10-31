@@ -64,6 +64,13 @@
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modalLEIA">Plus d'infos</button>
 			</div>
 		</div>
+		<div class="col 4">
+			<img src="owen.jpg" class="img-fluid col 4" alt="Responsive image">
+			<div class="card-body">
+				<h4 class="card-title owen">Card title</h4>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modalOWEN">Plus d'infos</button>
+			</div>
+		</div>
 
 	</div>
 
@@ -381,6 +388,62 @@
 		</div>
 	</div>
 
+	<!-- Modal Owen -->
+	<div class="modal fade bd-example-modal-lg modalOWEN" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Plus d'infos</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+
+
+					<table class="table">
+						<thead>
+							<tr>
+
+								<th scope="col">Details</th>
+								<th scope="col">Planète</th>
+								<th scope="col">Espece</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+
+								<td class="resultOWEN"></td>
+								<td class="resultTATOOINE"></td>
+								<td class="resultESPECE"></td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+
+								<th scope="col">Film 1</th>
+								<th scope="col">Film 5</th>
+								<th scope="col">Film 6</th>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+
+								<td class=FILM1></td>
+								<td class="FILM5"></td>
+								<td class="FILM6"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!--<script>
 				var img = jQuery('#phtos').attr('alt')
 				$("#phtos" ).mouseover(function(){
@@ -429,6 +492,13 @@
 
 			$.get("https://swapi.co/api/people/5/?format=json", function(data) {
 				$(".leia").html(data.name);
+
+			});
+		})
+		$(document).ready(function() {
+
+			$.get("https://swapi.co/api/people/6/?format=json", function(data) {
+				$(".owen").html(data.name);
 
 			});
 		})
@@ -688,6 +758,17 @@
 			})
 			$.get("https://swapi.co/api/people/5/?format=json", function(data) {
 				var i = ".resultLEIA";
+				$(i).append($("<li>").text(data.name));
+				$(i).append($("<li>").text(data.height));
+				$(i).append($("<li>").text(data.mass));
+				$(i).append($("<li>").text(data.hair_color));
+				$(i).append($("<li>").text(data.skin_color));
+				$(i).append($("<li>").text(data.eye_color));
+				$(i).append($("<li>").text(data.birth_year));
+				$(i).append($("<li>").text(data.gender));
+			})
+			$.get("https://swapi.co/api/people/6/?format=json", function(data) {
+				var i = ".resultOWEN";
 				$(i).append($("<li>").text(data.name));
 				$(i).append($("<li>").text(data.height));
 				$(i).append($("<li>").text(data.mass));
