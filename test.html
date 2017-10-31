@@ -57,6 +57,13 @@
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modalVADOR">Plus d'infos</button>
 			</div>
 		</div>
+		<div class="col 4">
+			<img src="leia.jpg" class="img-fluid col 4" alt="Responsive image">
+			<div class="card-body">
+				<h4 class="card-title leia">Card title</h4>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modalLEIA">Plus d'infos</button>
+			</div>
+		</div>
 
 	</div>
 
@@ -313,6 +320,66 @@
 			</div>
 		</div>
 	</div>
+	<!-- Modal leia -->
+	<div class="modal fade bd-example-modal-lg modalLEIA" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Plus d'infos</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+
+
+					<table class="table">
+						<thead>
+							<tr>
+
+								<th scope="col">Details</th>
+								<th scope="col">Planète</th>
+								<th scope="col">Espece</th>
+								<th scope="col">Vehicule</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+
+								<td class="resultLEIA"></td>
+								<td class="resultALDERAAN"></td>
+								<td class="resultESPECE"></td>
+								<td class="resultVEHICULES30"></td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+
+								<th scope="col">Film 1</th>
+								<th scope="col">Film 2</th>
+								<th scope="col">Film 3</th>
+								<th scope="col">Film 6</th>
+								<th scope="col">Film 7</th>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+
+								<td class=FILM1></td>
+								<td class="FILM2"></td>
+								<td class="FILM3"></td>
+								<td class="FILM6"></td>
+								<td class="FILM7"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!--<script>
 				var img = jQuery('#phtos').attr('alt')
@@ -355,6 +422,13 @@
 
 			$.get("https://swapi.co/api/people/4/?format=json", function(data) {
 				$(".vador").html(data.name);
+
+			});
+		})
+		$(document).ready(function() {
+
+			$.get("https://swapi.co/api/people/5/?format=json", function(data) {
+				$(".leia").html(data.name);
 
 			});
 		})
@@ -539,7 +613,7 @@
 
 
 			$.get("https://swapi.co/api/planets/2/", function(data) {
-				var i = ".resultTest";
+				var i = ".resultALDERAAN";
 				$(i).append($("<li>").text(data.name));
 				$(i).append($("<li>").text(data.rotation_period));
 				$(i).append($("<li>").text(data.orbital_period));
@@ -603,6 +677,17 @@
 			})
 			$.get("https://swapi.co/api/people/4/?format=json", function(data) {
 				var i = ".resultVADOR";
+				$(i).append($("<li>").text(data.name));
+				$(i).append($("<li>").text(data.height));
+				$(i).append($("<li>").text(data.mass));
+				$(i).append($("<li>").text(data.hair_color));
+				$(i).append($("<li>").text(data.skin_color));
+				$(i).append($("<li>").text(data.eye_color));
+				$(i).append($("<li>").text(data.birth_year));
+				$(i).append($("<li>").text(data.gender));
+			})
+			$.get("https://swapi.co/api/people/5/?format=json", function(data) {
+				var i = ".resultLEIA";
 				$(i).append($("<li>").text(data.name));
 				$(i).append($("<li>").text(data.height));
 				$(i).append($("<li>").text(data.mass));
