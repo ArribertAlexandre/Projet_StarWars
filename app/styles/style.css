@@ -1,0 +1,8 @@
+.image span {
+    visibility: hidden;
+}
+ 
+.image img:hover + span {
+    visibility: visible;
+	
+}
